@@ -1,0 +1,33 @@
+<div mat-dialog-title>Dodavanje osobe</div>
+<form [formGroup]="osobaForma" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+        <div class="red">
+            <mat-form-field appearance="outline">
+                <mat-label>Ime</mat-label>
+                <input matInput type="text" placeholder="Ime osobe" formControlName="ime">
+            </mat-form-field>
+        </div>
+        <div class="red">
+            <mat-form-field appearance="outline">
+                <mat-label>Prezime</mat-label>
+                <input matInput type="text" placeholder="Prezime osobe" formControlName="prezime">
+            </mat-form-field>
+        </div>
+        <div class="red">
+            <mat-form-field appearance="outline">
+                <mat-label>Godine</mat-label>
+                <input matInput type="number" placeholder="Godine" formControlName="godine">
+            </mat-form-field>
+        </div>
+        <div class="red">
+            <mat-form-field appearance="outline">
+                <mat-label>JMBG</mat-label>
+                <input matInput type="text" placeholder="JMBG" formControlName="jmbg">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">SAVE</button>
+    </div>
+</form>
