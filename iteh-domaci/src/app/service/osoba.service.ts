@@ -1,3 +1,4 @@
+import { UserData } from './../osobe-tabela/osobe-tabela.component';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -10,5 +11,8 @@ export class OsobaService {
 
   dodajOsobu(osoba: any) {
     return this._http.post('http://localhost:8000/peoples', osoba)
+  }
+  dohvatiOsobe() {
+    return this._http.get<UserData[]>('http://localhost:8000/peoples')
   }
 }
