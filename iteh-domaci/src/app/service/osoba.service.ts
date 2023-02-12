@@ -15,4 +15,11 @@ export class OsobaService {
   dohvatiOsobe() {
     return this._http.get<UserData[]>('http://localhost:8000/peoples')
   }
+  izbrisiOsobu(id: number) {
+    return this._http.delete(`http://localhost:8000/peoples/${id}`)
+  }
+  editOsobe(osoba: UserData) {
+    console.log("OSOBA", osoba)
+    return this._http.put(`http://localhost:8000/peoples/${osoba.id}`, osoba)
+  }
 }

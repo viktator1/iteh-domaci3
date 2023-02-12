@@ -6,34 +6,41 @@
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
 
-        <!-- ID Column -->
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
             <td mat-cell *matCellDef="let row"> {{row.id}} </td>
         </ng-container>
 
-        <!-- Progress Column -->
         <ng-container matColumnDef="ime">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Ime </th>
             <td mat-cell *matCellDef="let row"> {{row.ime}} </td>
         </ng-container>
 
-        <!-- Name Column -->
         <ng-container matColumnDef="prezime">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Prezime </th>
             <td mat-cell *matCellDef="let row"> {{row.prezime}} </td>
         </ng-container>
 
-        <!-- Fruit Column -->
         <ng-container matColumnDef="godine">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Godine </th>
             <td mat-cell *matCellDef="let row"> {{row.godine}} </td>
         </ng-container>
 
-        <!-- Fruit Column -->
         <ng-container matColumnDef="jmbg">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> JMBG </th>
             <td mat-cell *matCellDef="let row"> {{row.jmbg}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="akcije">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Akcije </th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="editOsobeClick(row)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="izbrisiOsobu(row.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
